@@ -8,7 +8,7 @@
 - Decide whether a later container baseline should include Kani or stay CI-only for proofs
 - Add hazard review notes for usability, hardware-interface, and cybersecurity risks outside the current proof slice
 - Add regression seeds or broader generated exploration beyond the current bounded adversarial sequences
-- Push the container CI path and record container verification evidence
+- Decide whether to add a local container execution evidence record once a workstation container engine is available
 
 ## Waiting
 
@@ -34,5 +34,6 @@
 - Drafted the top-level portfolio explainer and business case.
 - Added a containerized Rust verification baseline and runbook.
 - Added a CI execution path for the containerized Rust verification baseline.
+- Executed the containerized Rust verification path in CI and recorded evidence.
 - Defined and applied objective residual-risk acceptability criteria for the current hazard baseline.
 - Created initial repository structure.

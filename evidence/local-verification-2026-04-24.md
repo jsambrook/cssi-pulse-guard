@@ -31,6 +31,7 @@ Working tree after creation of:
 ## Open Verification Gaps
 
 - CI proof evidence is now recorded in `ci-verification-2026-04-24.md`.
+- CI container evidence is now recorded in `container-verification-2026-04-24.md`.
 - Install Kani locally only if local proof execution is needed in addition to CI.
 - Add regression seeds or generated exploration beyond the current bounded adversarial sequences.
 - Execute the Docker container path and record container evidence once a local container engine is available.

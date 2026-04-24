@@ -47,8 +47,10 @@ The CI job:
 
 After a successful CI run, record the workflow run reference in `evidence/`.
 
+CI evidence for commit `fe57f1158fe106cd79b5916a5856c3d7ad647754` is recorded in `evidence/container-verification-2026-04-24.md`.
+
 ## Current Limits
 
 - The local development environment used for this update does not have Docker or Podman installed, so the container path has not been executed locally.
-- Kani is not yet part of this first container baseline.
+- Kani is not part of this first container baseline.
 - The container is aimed at reproducible verification, not interactive development.

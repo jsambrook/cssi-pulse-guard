@@ -323,6 +323,69 @@ The repository now has a pinned container baseline for the conventional Rust ver
 
 Commit the container baseline, then execute it and record evidence once a container engine is available, or move next to residual-risk acceptability criteria.
 
+## 2026-04-24 - Container CI Execution Path
+
+### Focus
+
+Turn the drafted container baseline into an executable CI path.
+
+### Intent
+
+Close the gap between having a Dockerfile and having actual evidence that the repository's conventional Rust verification bar runs reproducibly in a pinned container environment.
+
+### Work Done
+
+- Reviewed the remaining gaps and selected container execution evidence as the highest-value next step.
+- Added a `container-rust` job to `.github/workflows/ci.yml`.
+- Updated `container/runbook.md` to describe CI execution and evidence expectations.
+- Updated `artifact-map.md` and `next-actions.md` to reflect that the container path now exists in CI but is not yet evidenced.
+
+### Evidence / Test
+
+Local Rust verification should be run after this change. Container execution evidence is not yet available until the GitHub Actions workflow runs and its result is recorded.
+
+### Result
+
+The repository now has a CI execution path for the containerized Rust verification baseline.
+
+### Next Action
+
+Commit and push the container CI path, then record the container verification result from GitHub Actions.
+
+## 2026-04-24 - Container CI Verification Evidence
+
+### Focus
+
+Execute the new container CI path and preserve the resulting reproducibility evidence.
+
+### Intent
+
+Turn the repository's container baseline from a drafted capability into a verified lifecycle checkpoint with recorded evidence.
+
+### Work Done
+
+- Pushed commit `fe57f11` to `main`.
+- Waited for GitHub Actions run `24903332050`.
+- Confirmed successful completion of the `Containerized Rust verification` job along with the Rust and Kani jobs.
+- Added `evidence/container-verification-2026-04-24.md`.
+- Updated `artifact-map.md`, `next-actions.md`, `evidence/local-verification-2026-04-24.md`, and `container/runbook.md`.
+
+### Evidence / Test
+
+- GitHub Actions workflow `CI`: pass
+- Commit: `fe57f1158fe106cd79b5916a5856c3d7ad647754`
+- Containerized Rust verification job: pass
+- Container built successfully and ran `./container/run-rust-verification.sh`
+- Container run completed formatting, tests, and clippy successfully
+
+### Result
+
+The repository now has recorded CI evidence that the conventional Rust verification bar runs successfully in a pinned container environment.
+
+### Next Action
+
+Commit the container evidence record and tag the lifecycle baseline as `v0.5.0-containerized-ci-baseline`, then continue with out-of-scope hazard review notes or broader generated exploration.
+
 ## 2026-04-24 - Residual Risk Acceptability Baseline
 
 ### Focus
