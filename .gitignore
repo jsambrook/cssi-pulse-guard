@@ -1,0 +1,18 @@
+
+# Local/editor files
+.DS_Store
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Generated/private scratch files
+scratch/
+local/
+secrets.*
