@@ -257,3 +257,32 @@ The repository now opens with a clear explanation of scope, proof boundary, curr
 ### Next Action
 
 Commit the explainer baseline, then move to containerized reproducibility or residual-risk acceptability criteria.
+
+## 2026-04-24 - Tagging Threshold Clarification
+
+### Focus
+
+Make the lifecycle tagging strategy easier to apply consistently during future development.
+
+### Intent
+
+Turn the existing tagging strategy into an operational rule that clearly distinguishes ordinary coherent commits from tag-worthy lifecycle baselines.
+
+### Work Done
+
+- Expanded `process/release-and-tagging.md` with an explicit milestone threshold.
+- Added a working rule for deciding whether a commit changes the repository's external claim.
+- Added repository-specific examples showing why some recent commits were tagged and others were not.
+- Added a tie-breaker rule to prefer fewer, cleaner tags when the milestone boundary is unclear.
+
+### Evidence / Test
+
+Process-only change. No code or verification behavior changed.
+
+### Result
+
+The repository now has a more explicit and repeatable rule for deciding when a lifecycle tag should be created.
+
+### Next Action
+
+Commit the tagging-threshold clarification, then continue with containerized reproducibility or residual-risk acceptability criteria.

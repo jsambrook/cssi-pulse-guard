@@ -56,6 +56,49 @@ A lifecycle tag should be created only when:
 - project-control artifacts such as `artifact-map.md`, `next-actions.md`, and `journal.md` reflect the baseline
 - non-claims and proof-boundary limits are clear
 
+## Milestone Threshold
+
+Not every good commit deserves a tag. A commit should be tagged only when it crosses a lifecycle boundary that changes what the repository can credibly claim.
+
+Use this decision rule:
+
+- commit every coherent development increment
+- tag only when the increment creates a new externally meaningful baseline
+
+A baseline is externally meaningful when at least one of these is true:
+
+- it adds a new artifact class that materially improves reviewability, such as the first hazard baseline, the first traceable implementation slice, the first formal-proof evidence, or the first containerized reproducibility path
+- it changes the verification claim the repository can honestly make
+- it makes the repository substantially more usable for an external audience, such as a release-ready explainer or a public portfolio baseline
+- it establishes a stable checkpoint that future work is likely to build on rather than immediately replace
+
+An increment is usually not tag-worthy when it only:
+
+- refines an existing artifact without changing the repository's external claim
+- adds depth inside an already-established baseline without creating a new lifecycle boundary
+- fixes small issues after a tag-worthy baseline unless the fixes justify a patch tag
+- records routine maintenance, housekeeping, or process clarifications
+
+## Working Rule For This Project
+
+Use the following default rule during day-to-day work:
+
+- if the commit answers "what new thing can a serious reviewer now verify or understand that they could not before?" with a materially different answer, create a new lifecycle tag
+- if the answer is "the same baseline, but better refined," make a commit without a new tag
+
+Applied examples from this repository:
+
+- `v0.3.0-scenario-vv-baseline` was tag-worthy because it created the first conventional scenario-test baseline
+- `v0.4.0-kani-proof-baseline` was tag-worthy because it created the first recorded formal-proof evidence baseline
+- the generated adversarial regression tests were a strong development increment, but not automatically a new tag because they extended an existing verification baseline rather than creating a new artifact class or external proof claim
+- the portfolio explainer and business-case draft may become tag-worthy later if refined into a release-quality external baseline, but the initial draft alone does not yet force a new milestone
+
+## Tie-Breaker Rule
+
+If it is unclear whether to tag, do not tag immediately. Commit the work first, continue until the milestone boundary is clearer, and then tag the commit that best represents the stable baseline.
+
+This bias is intentional. It is better to have slightly fewer, cleaner tags than too many tags that do not represent meaningfully different lifecycle checkpoints.
+
 ## Annotated Tag Message Content
 
 Use annotated tags:
