@@ -44,3 +44,25 @@ The first implementation intentionally excludes timing, hardware energy delivery
 ### Revisit When
 
 Revisit when the project adds a hardware abstraction, event timing model, operator workflow, or integration layer.
+
+## Residual Risk Acceptance For The Portfolio Slice
+
+### Decision
+
+Use a project-specific residual-risk acceptance matrix for the current therapy-control proof slice, with residual scores `1-4` acceptable, `5-9` conditionally acceptable with explicit rationale and evidence, and `10-25` not acceptable for the baseline release.
+
+### Context
+
+The hazard analysis baseline had provisional residual rationale but no objective acceptance criteria, which made the risk story weaker than the code and verification story.
+
+### Rationale
+
+This repository needs a defensible way to distinguish accepted low residual risk from conditionally accepted risk that is only tolerable because the proof slice is narrow and non-claims are explicit.
+
+### Consequences
+
+Severity-5 residual hazards now require explicit review notes even when conditionally acceptable. If the repository expands claims or scope, the current acceptability assessment must be revisited rather than silently inherited.
+
+### Revisit When
+
+Revisit when hardware, timing, alarms, usability, cybersecurity, or broader product claims enter scope.

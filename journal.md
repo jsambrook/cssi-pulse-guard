@@ -322,3 +322,33 @@ The repository now has a pinned container baseline for the conventional Rust ver
 ### Next Action
 
 Commit the container baseline, then execute it and record evidence once a container engine is available, or move next to residual-risk acceptability criteria.
+
+## 2026-04-24 - Residual Risk Acceptability Baseline
+
+### Focus
+
+Define objective residual-risk acceptance criteria for the current software hazard baseline.
+
+### Intent
+
+Strengthen the repository's risk story by replacing provisional residual rationale with explicit acceptance bands and an applied disposition for each current hazard.
+
+### Work Done
+
+- Reviewed the hazard analysis, requirements baseline, and open project-control actions.
+- Identified residual-risk acceptability as the highest-value next step because the repository already had stronger implementation and verification evidence than risk-disposition discipline.
+- Added `risk/risk-acceptability.md`.
+- Updated `risk/hazard-analysis.md` with residual scores, acceptance status, and evidence-based residual rationale.
+- Updated `risk/README.md`, `artifact-map.md`, `decision-log.md`, and `next-actions.md`.
+
+### Evidence / Test
+
+Documentation change only. No implementation behavior changed.
+
+### Result
+
+The repository now has a project-specific residual-risk acceptance frame and an explicit disposition for each current therapy-control software hazard.
+
+### Next Action
+
+Commit the residual-risk baseline, then move next to multi-step adversarial testing, container execution evidence, or expanded out-of-scope hazard review notes.

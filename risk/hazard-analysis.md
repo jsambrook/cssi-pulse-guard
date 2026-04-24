@@ -30,18 +30,18 @@ Out of scope for this first baseline: clinical validity, hardware energy deliver
 | 4 | serious injury requiring intervention | probable without controls |
 | 5 | death or irreversible serious injury | frequent without controls |
 
-Initial risk priority is estimated as severity x probability. Residual values are provisional and require review against objective acceptability criteria in a fuller risk-management plan.
+Initial risk priority is estimated as severity x probability. Residual values are reviewed against the project-specific acceptability criteria in `risk-acceptability.md`.
 
 ## Hazard Baseline
 
-| Hazard ID | Hazardous Situation | Foreseeable Cause | Harm | Initial SxP | Risk Controls | Linked Requirements | Linked Invariants | Residual Rationale |
-|---|---|---|---|---:|---|---|---|---|
-| HAZ-001 | Therapy is requested while an inhibit interlock is active | command accepted without checking inhibit signal; stale interlock state | serious unintended therapy | 5x3=15 | RC-001, RC-002, RC-006 | SWR-001, SWR-006, SWR-010 | INV-001, INV-004 | transition logic blocks delivery and clears armed state when inhibit is active |
-| HAZ-002 | Therapy is requested before the controller is armed | direct command path bypasses arming state | serious unintended therapy | 5x2=10 | RC-001, RC-003, RC-006 | SWR-002, SWR-007, SWR-010 | INV-002, INV-004 | delivery request is only possible from `Armed` |
-| HAZ-003 | Therapy is requested without a valid therapy indication | false command accepted without rhythm/therapy-detection evidence | inappropriate therapy or delayed correct treatment | 5x3=15 | RC-001, RC-004, RC-006 | SWR-003, SWR-006, SWR-010 | INV-003, INV-004 | arming and delivery require a valid detection flag |
-| HAZ-004 | Therapy is requested when the patient connection is absent | disconnected lead/pad status ignored | ineffective therapy; delayed treatment | 4x3=12 | RC-001, RC-005, RC-006 | SWR-004, SWR-006, SWR-010 | INV-004 | arming and delivery require patient connection present |
-| HAZ-005 | Therapy remains enabled after a detected fault | fault command does not latch safe state | unintended or uncontrolled therapy | 5x2=10 | RC-007, RC-008 | SWR-008, SWR-009, SWR-010 | INV-005 | fault transition disables delivery and latches `Faulted` until reset preconditions pass |
-| HAZ-006 | Therapy is requested when hardware readiness or self-test status is failed | readiness and diagnostic status not included in gating logic | ineffective or uncontrolled therapy | 5x2=10 | RC-001, RC-005, RC-007 | SWR-005, SWR-006, SWR-010 | INV-004, INV-005 | arming, delivery, and fault reset require hardware-ready and self-test-passed inputs |
+| Hazard ID | Hazardous Situation | Foreseeable Cause | Harm | Initial SxP | Residual SxP | Acceptance | Risk Controls | Linked Requirements | Linked Invariants | Residual Rationale |
+|---|---|---|---|---:|---:|---|---|---|---|---|
+| HAZ-001 | Therapy is requested while an inhibit interlock is active | command accepted without checking inhibit signal; stale interlock state | serious unintended therapy | 5x3=15 | 5x1=5 | Conditionally acceptable | RC-001, RC-002, RC-006 | SWR-001, SWR-006, SWR-010 | INV-001, INV-004 | transition logic blocks delivery and clears armed state when inhibit is active; unit, scenario, generated, and Kani evidence exist |
+| HAZ-002 | Therapy is requested before the controller is armed | direct command path bypasses arming state | serious unintended therapy | 5x2=10 | 5x1=5 | Conditionally acceptable | RC-001, RC-003, RC-006 | SWR-002, SWR-007, SWR-010 | INV-002, INV-004 | delivery request is only possible from `Armed`; unit, generated, and Kani evidence exist |
+| HAZ-003 | Therapy is requested without a valid therapy indication | false command accepted without rhythm/therapy-detection evidence | inappropriate therapy or delayed correct treatment | 5x3=15 | 5x1=5 | Conditionally acceptable | RC-001, RC-004, RC-006 | SWR-003, SWR-006, SWR-010 | INV-003, INV-004 | arming and delivery require a valid detection flag; residual acceptance depends on the explicit non-claim that clinical detection is out of scope |
+| HAZ-004 | Therapy is requested when the patient connection is absent | disconnected lead/pad status ignored | ineffective therapy; delayed treatment | 4x3=12 | 4x1=4 | Acceptable | RC-001, RC-005, RC-006 | SWR-004, SWR-006, SWR-010 | INV-004 | arming and delivery require patient connection present; unit, scenario, generated, and Kani evidence exist |
+| HAZ-005 | Therapy remains enabled after a detected fault | fault command does not latch safe state | unintended or uncontrolled therapy | 5x2=10 | 5x1=5 | Conditionally acceptable | RC-007, RC-008 | SWR-008, SWR-009, SWR-010 | INV-005 | fault transition disables delivery and latches `Faulted` until reset preconditions pass; unit, scenario, generated, and Kani evidence exist |
+| HAZ-006 | Therapy is requested when hardware readiness or self-test status is failed | readiness and diagnostic status not included in gating logic | ineffective or uncontrolled therapy | 5x2=10 | 5x1=5 | Conditionally acceptable | RC-001, RC-005, RC-007 | SWR-005, SWR-006, SWR-010 | INV-004, INV-005 | arming, delivery, and fault reset require hardware-ready and self-test-passed inputs; acceptance is limited to the software proof slice |
 
 ## Risk Controls
 
@@ -58,7 +58,7 @@ Initial risk priority is estimated as severity x probability. Residual values ar
 
 ## Open Review Items
 
-- Define objective risk-acceptability criteria before treating residual risk estimates as accepted.
 - Add usability-related hazards for operator arming, confirmation, and alarm response.
 - Add hardware-interface failure modes when a hardware abstraction boundary exists.
 - Add cybersecurity hazards once command/source authentication exists.
+- Revisit conditional acceptance for severity-5 hazards if the repository broadens its claims or proof boundary.

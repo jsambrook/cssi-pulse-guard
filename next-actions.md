@@ -3,12 +3,12 @@
 
 ## Active
 
-- Define objective residual-risk acceptability criteria for the hazard baseline
 - Review GitHub Actions Node.js 20 deprecation warning and update action versions when replacements are available
 - Extend generated testing to multi-step adversarial command sequences and regression seeds
 - Refine the outward-facing explainer for release preparation and final audience fit
 - Execute the containerized Rust verification path and record container evidence
 - Decide whether a later container baseline should include Kani or stay CI-only for proofs
+- Add hazard review notes for usability, hardware-interface, and cybersecurity risks outside the current proof slice
 
 ## Waiting
 
@@ -32,4 +32,5 @@
 - Added generated adversarial tests for invalid command sequences and interlock combinations.
 - Drafted the top-level portfolio explainer and business case.
 - Added a containerized Rust verification baseline and runbook.
+- Defined and applied objective residual-risk acceptability criteria for the current hazard baseline.
 - Created initial repository structure.

@@ -25,6 +25,7 @@
 |---|---|---|
 | Project charter describing the AI-led portfolio objective and proof boundary | Initial artifact for the project | Baseline exists |
 | Hazard and risk-control starter set for unintended therapy delivery and related safety concerns | Initial artifact for the project | Baseline drafted |
+| Residual-risk acceptability criteria for the therapy-control proof slice | Provide objective acceptance rules for current hazard dispositions | Baseline drafted and applied |
 | Initial software requirements for therapy-control state transitions and interlocks | Initial artifact for the project | Baseline drafted |
 | Architecture note describing the pure Rust transition function and proof boundary | Initial artifact for the project | Baseline drafted |
 | Rust therapy-control state-machine skeleton | Initial artifact for the project | Implemented with unit tests |

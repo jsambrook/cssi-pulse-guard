@@ -6,3 +6,4 @@ Start with:
 
 - `hazard-analysis.md`
 - `safety-invariants.md`
+- `risk-acceptability.md`
