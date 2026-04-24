@@ -15,13 +15,14 @@ Working tree after creation of:
 - initial Kani harnesses under `cfg(kani)`
 - GitHub Actions CI skeleton
 - scenario test strategy and command-sequence scenario tests
+- generated adversarial test strategy and invalid-command/interlock matrix tests
 
 ## Commands and Results
 
 | Command | Result | Notes |
 |---|---|---|
 | `cargo fmt --all --check` | Pass | Formatting clean after applying `cargo fmt --all`. |
-| `cargo test --workspace --all-targets` | Pass | 11 tests passed: 6 unit tests and 5 scenario tests. |
+| `cargo test --workspace --all-targets` | Pass | 14 tests passed: 6 unit tests, 5 scenario tests, and 3 adversarial/generated tests. |
 | `cargo clippy --workspace --all-targets -- -D warnings` | Pass | No clippy warnings. |
 | `cargo kani -p pulse_guard_core` | Not run | Local Cargo installation does not include the `kani` subcommand. |
 
@@ -29,4 +30,4 @@ Working tree after creation of:
 
 - CI proof evidence is now recorded in `ci-verification-2026-04-24.md`.
 - Install Kani locally only if local proof execution is needed in addition to CI.
-- Add adversarial or generated test cases for invalid command sequences and interlock combinations.
+- Extend generated testing from one-step matrices to multi-step adversarial command sequences.

@@ -8,3 +8,4 @@ Start with:
 - `kani-proof-plan.md`
 - `kani-runbook.md`
 - `test-strategy.md`
+- `adversarial-test-strategy.md`

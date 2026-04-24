@@ -197,3 +197,34 @@ The project now has CI-recorded Kani proof evidence for the five initial therapy
 ### Next Action
 
 Commit the evidence record and tag the lifecycle baseline as `v0.4.0-kani-proof-baseline`, then continue with adversarial/generated testing or containerized reproducibility.
+
+## 2026-04-24 - Generated Adversarial Test Baseline
+
+### Focus
+
+Add generated adversarial tests for invalid command combinations and hostile interlock states.
+
+### Intent
+
+Advance the charter's AI-led adversarial-testing requirement with a reproducible generated test slice that complements unit, scenario, and Kani evidence.
+
+### Work Done
+
+- Reviewed the current artifacts and identified adversarial/generated testing as the highest-value next step after recorded Kani proof evidence.
+- Added `implementation/pulse_guard_core/tests/adversarial.rs`.
+- Added `verification/adversarial-test-strategy.md`.
+- Updated `verification/test-strategy.md`, local verification evidence, `artifact-map.md`, and `next-actions.md`.
+
+### Evidence / Test
+
+- `cargo fmt --all --check`: pass
+- `cargo test --workspace --all-targets`: pass, 14 tests
+- `cargo clippy --workspace --all-targets -- -D warnings`: pass
+
+### Result
+
+The project now includes generated adversarial regression coverage over invalid command/state combinations and hostile delivery-precondition combinations.
+
+### Next Action
+
+Commit this adversarial test baseline, then either extend generation to multi-step command sequences or add the containerized reproducibility baseline.
