@@ -7,6 +7,8 @@ Start here if you want a concise view of the current release posture.
 ## Contents
 
 - `public-portfolio-summary.md`: reviewer-facing summary of the project, claims, and evidence
+- `public-portfolio-summary.pdf`: release-ready PDF asset generated from the Markdown summary
+- `build-public-portfolio-summary.sh`: repeatable build script for the PDF asset
 - `release-readiness-checklist.md`: release gating checklist for the current baseline
 
 ## Current Status

@@ -572,3 +572,34 @@ The repository now includes bounded multi-step adversarial sequence coverage in 
 ### Next Action
 
 Commit this adversarial sequence baseline, then move to container execution evidence, broader generated sequence exploration, or out-of-scope hazard review notes.
+
+## 2026-04-24 - Public Summary PDF Release Asset
+
+### Focus
+
+Produce an Office-friendly release artifact for the public portfolio summary and attach it to the tagged GitHub Release.
+
+### Intent
+
+Give external reviewers a polished PDF version of the public summary without changing the underlying Markdown source of truth.
+
+### Work Done
+
+- Added `release/build-public-portfolio-summary.sh` as a repeatable PDF build script.
+- Generated `release/public-portfolio-summary.pdf` from `release/public-portfolio-summary.md` with `pandoc` and `xelatex`.
+- Updated `release/README.md` to list the PDF asset and build script.
+- Uploaded the PDF as an asset to the `v1.0.0-public-portfolio-release` GitHub Release.
+
+### Evidence / Test
+
+- `pandoc` build: pass
+- PDF text sanity check with `pdftotext`: pass
+- GitHub Release asset upload: pass
+
+### Result
+
+The public release now includes a PDF summary suitable for office-oriented review and attachment handling.
+
+### Next Action
+
+Keep the Markdown summary as the source of truth and regenerate the PDF asset if the public summary changes.
