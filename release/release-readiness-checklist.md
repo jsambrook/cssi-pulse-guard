@@ -18,8 +18,8 @@
 
 - [x] Final audience-fit review for README and business-case language
 - [x] Review whether additional hazard notes are needed for usability, hardware-interface, and cybersecurity risks outside the proof slice
-- [ ] Confirm the final public release tag boundary
-- [ ] Confirm the release notes or summary package are adequate for Microsoft Office use
+- [x] Confirm the final public release tag boundary
+- [x] Confirm the release notes or summary package are adequate for Microsoft Office use
 
 ## Operating Rules
 

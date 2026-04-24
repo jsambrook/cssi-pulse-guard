@@ -52,8 +52,8 @@ This makes the project useful as a portfolio artifact for technical review, hiri
 
 ## Current Release Posture
 
-The repository is not yet tagged as `v1.0.0-public-portfolio-release`. The current best description is:
+The repository is tagged as `v1.0.0-public-portfolio-release`. The current best description is:
 
-- a release-prepared private baseline with strong technical evidence
-- a portfolio artifact that is approaching public release readiness
-- a project that still has a few audience-fit and risk-review items to close before final release
+- a public portfolio baseline with strong technical evidence
+- a portfolio artifact ready for external review
+- a project that now moves into maintenance and follow-on refinement

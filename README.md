@@ -65,5 +65,4 @@ The current proof boundary is the pure Rust transition function in [lib.rs](impl
 
 ## Current Priorities
 
-- confirm the public release tag boundary for the current evidence baseline
 - keep CI dependencies current as GitHub Actions platform requirements change
