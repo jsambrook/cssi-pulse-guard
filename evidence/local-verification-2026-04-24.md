@@ -27,6 +27,6 @@ Working tree after creation of:
 
 ## Open Verification Gaps
 
-- Push the Kani CI workflow and record its proof output once available.
+- CI proof evidence is now recorded in `ci-verification-2026-04-24.md`.
 - Install Kani locally only if local proof execution is needed in addition to CI.
 - Add adversarial or generated test cases for invalid command sequences and interlock combinations.

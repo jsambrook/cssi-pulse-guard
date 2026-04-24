@@ -30,8 +30,8 @@
 | Rust therapy-control state-machine skeleton | Initial artifact for the project | Implemented with unit tests |
 | Conventional automated test strategy and starter scenarios | Initial artifact for the project | Strategy and starter scenarios implemented |
 | Formal property list linked to hazards and requirements | Initial artifact for the project | Baseline drafted |
-| Initial Kani proof harness plan for shock-inhibit and armed-state invariants | Initial artifact for the project | Harnesses and CI execution path drafted; proof output not recorded |
-| CI/CD and containerization plan | Initial artifact for the project | Rust and Kani CI jobs added; containerization not started |
+| Initial Kani proof harness plan for shock-inhibit and armed-state invariants | Initial artifact for the project | CI proof evidence recorded for five initial invariants |
+| CI/CD and containerization plan | Initial artifact for the project | Rust and Kani CI jobs pass; containerization not started |
 | Top-level explainer of the technical and business case for the portfolio project | Initial artifact for the project | Not started |
 | Release and tagging strategy | Preserve meaningful lifecycle baselines over time | Baseline drafted |
 

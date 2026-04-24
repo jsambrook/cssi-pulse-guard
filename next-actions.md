@@ -3,11 +3,11 @@
 
 ## Active
 
-- Push the Kani CI workflow and record proof results from GitHub Actions
 - Add adversarial or generated tests for invalid command sequences and interlock combinations
 - Draft the top-level portfolio explainer and business case
 - Add a containerized reproducibility baseline
 - Define objective residual-risk acceptability criteria for the hazard baseline
+- Review GitHub Actions Node.js 20 deprecation warning and update action versions when replacements are available
 
 ## Waiting
 
@@ -27,4 +27,5 @@
 - Specified initial Kani proof targets and assumptions.
 - Added scenario tests for full command sequences: power on, monitor, arm, deliver, complete, fault, reset, and power off.
 - Added a Kani CI execution path and local/CI Kani runbook.
+- Pushed the CI workflow and recorded passing Kani proof evidence from GitHub Actions.
 - Created initial repository structure.

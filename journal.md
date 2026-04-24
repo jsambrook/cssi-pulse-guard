@@ -162,3 +162,38 @@ The project now has a documented Kani execution path in CI, but proof status rem
 ### Next Action
 
 Push the Kani CI workflow, review the GitHub Actions result, and record proof evidence or any failure details in `evidence/`.
+
+## 2026-04-24 - Kani CI Proof Evidence
+
+### Focus
+
+Execute the Kani CI path and preserve proof evidence.
+
+### Intent
+
+Close the gap between having Kani harnesses and having recorded verification evidence for selected safety invariants.
+
+### Work Done
+
+- Pushed `main` and the existing `v0.3.0-scenario-vv-baseline` tag to GitHub.
+- Waited for GitHub Actions run `24899095207`.
+- Reviewed CI run status and Kani proof logs.
+- Added `evidence/ci-verification-2026-04-24.md`.
+- Updated `artifact-map.md`, `next-actions.md`, `verification/kani-proof-plan.md`, and local evidence notes.
+
+### Evidence / Test
+
+- GitHub Actions workflow `CI`: pass
+- Commit: `5f19d05f1907cf1772cfb4d8030ff3f4869955f4`
+- Rust checks: pass
+- Kani proofs: pass
+- Kani summary: `0 of 52 failed`
+- Manual harness summary: 5 successfully verified harnesses, 0 failures, 5 total
+
+### Result
+
+The project now has CI-recorded Kani proof evidence for the five initial therapy-control safety invariants.
+
+### Next Action
+
+Commit the evidence record and tag the lifecycle baseline as `v0.4.0-kani-proof-baseline`, then continue with adversarial/generated testing or containerized reproducibility.
