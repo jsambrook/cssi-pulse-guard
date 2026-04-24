@@ -2,7 +2,7 @@
 
 ## What This Project Is
 
-CSSI Pulse Guard is an AI-led portfolio project that demonstrates a narrow but credible slice of medical-device software development practice. It shows how Common Sense Systems approaches traceability, risk thinking, Rust implementation, automated verification, formal proofs, and release discipline.
+CSSI Pulse Guard is an AI-assisted portfolio project that demonstrates a narrow but credible slice of medical-device software development practice. It shows how Common Sense Systems approaches traceability, risk thinking, Rust implementation, automated verification, formal proofs, and release discipline.
 
 The modeled software is a therapy-control state machine. It is intentionally not a full device. The repository is designed to be inspectable by hiring managers, prospective clients, and technical reviewers who want evidence instead of claims.
 
@@ -42,13 +42,13 @@ This makes the project useful as a portfolio artifact for technical review, hiri
 
 ## Evidence Pointers
 
-- [charter.md](/Users/john/git/cssi-pulse-guard/charter.md)
-- [artifact-map.md](/Users/john/git/cssi-pulse-guard/artifact-map.md)
-- [risk/hazard-analysis.md](/Users/john/git/cssi-pulse-guard/risk/hazard-analysis.md)
-- [requirements/software-requirements.md](/Users/john/git/cssi-pulse-guard/requirements/software-requirements.md)
-- [design/therapy-state-machine.md](/Users/john/git/cssi-pulse-guard/design/therapy-state-machine.md)
-- [evidence/ci-verification-2026-04-24.md](/Users/john/git/cssi-pulse-guard/evidence/ci-verification-2026-04-24.md)
-- [evidence/container-verification-2026-04-24.md](/Users/john/git/cssi-pulse-guard/evidence/container-verification-2026-04-24.md)
+- [charter.md](../charter.md)
+- [artifact-map.md](../artifact-map.md)
+- [risk/hazard-analysis.md](../risk/hazard-analysis.md)
+- [requirements/software-requirements.md](../requirements/software-requirements.md)
+- [design/therapy-state-machine.md](../design/therapy-state-machine.md)
+- [evidence/ci-verification-2026-04-24.md](../evidence/ci-verification-2026-04-24.md)
+- [evidence/container-verification-2026-04-24.md](../evidence/container-verification-2026-04-24.md)
 
 ## Current Release Posture
 

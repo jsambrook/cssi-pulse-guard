@@ -36,11 +36,11 @@ The current verification evidence supports these narrow claims:
 
 See:
 
-- [hazard-analysis.md](/Users/john/git/cssi-pulse-guard/risk/hazard-analysis.md)
-- [software-requirements.md](/Users/john/git/cssi-pulse-guard/requirements/software-requirements.md)
-- [therapy-state-machine.md](/Users/john/git/cssi-pulse-guard/design/therapy-state-machine.md)
-- [ci-verification-2026-04-24.md](/Users/john/git/cssi-pulse-guard/evidence/ci-verification-2026-04-24.md)
-- [release/public-portfolio-summary.md](/Users/john/git/cssi-pulse-guard/release/public-portfolio-summary.md)
+- [hazard-analysis.md](risk/hazard-analysis.md)
+- [software-requirements.md](requirements/software-requirements.md)
+- [therapy-state-machine.md](design/therapy-state-machine.md)
+- [ci-verification-2026-04-24.md](evidence/ci-verification-2026-04-24.md)
+- [release/public-portfolio-summary.md](release/public-portfolio-summary.md)
 
 ## Proof Boundary and Non-Claims
 
@@ -53,18 +53,17 @@ This repository does not claim:
 - cybersecurity assurance
 - market-submission readiness
 
-The current proof boundary is the pure Rust transition function in [lib.rs](/Users/john/git/cssi-pulse-guard/implementation/pulse_guard_core/src/lib.rs).
+The current proof boundary is the pure Rust transition function in [lib.rs](implementation/pulse_guard_core/src/lib.rs).
 
 ## Repository Guide
 
-- Start with the [project charter](/Users/john/git/cssi-pulse-guard/charter.md) for scope and constraints.
-- Use the [artifact map](/Users/john/git/cssi-pulse-guard/artifact-map.md) to see expected deliverables and status.
-- Review [verification/README.md](/Users/john/git/cssi-pulse-guard/verification/README.md) and [evidence/README.md](/Users/john/git/cssi-pulse-guard/evidence/README.md) for the current verification and evidence trail.
-- Read the external-facing [business-case.md](/Users/john/git/cssi-pulse-guard/business-case.md) for why this project matters commercially and professionally.
-- Use the [release package](/Users/john/git/cssi-pulse-guard/release/README.md) for a concise public-release view.
+- Start with the [project charter](charter.md) for scope and constraints.
+- Use the [artifact map](artifact-map.md) to see expected deliverables and status.
+- Review [verification/README.md](verification/README.md) and [evidence/README.md](evidence/README.md) for the current verification and evidence trail.
+- Read the external-facing [business-case.md](business-case.md) for why this project matters commercially and professionally.
+- Use the [release package](release/README.md) for a concise public-release view.
 
 ## Current Priorities
 
-- refine the public release package and audience-fit language
-- review whether additional hazard notes are needed for usability, hardware-interface, and cybersecurity risks
+- confirm the public release tag boundary for the current evidence baseline
 - keep CI dependencies current as GitHub Actions platform requirements change

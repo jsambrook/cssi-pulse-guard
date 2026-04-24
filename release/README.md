@@ -18,4 +18,4 @@ The project is not yet declared a public release. The current baseline is a stro
 - CI-recorded containerized verification results
 - explicit proof boundaries and non-claims
 
-The remaining work is release preparation and audience-fit review, not core proof-slice construction.
+The remaining work is release tagging and final package confirmation, not core proof-slice construction.

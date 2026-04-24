@@ -65,7 +65,7 @@ This is the kind of evidence that lets an evaluator judge depth, not just resume
 
 ## AI Use Position
 
-The project is intentionally AI-led, but not AI-trusting.
+The project is intentionally AI-assisted, but not AI-trusting.
 
 The business value of that position is straightforward:
 
@@ -91,8 +91,7 @@ Those limits are part of the value proposition. They show disciplined scope cont
 
 The next additions with the highest portfolio value are:
 
-- audience-fit review and final release packaging for the top-level explainer
-- additional hazard review notes for usability, hardware-interface, and cybersecurity risks outside the proof slice
+- public-release tag decision for the current evidence baseline
 - continued verification depth through generated adversarial sequence expansion
 - follow-on release preparation for the public portfolio baseline
 
@@ -100,4 +99,4 @@ The next additions with the highest portfolio value are:
 
 CSSI Pulse Guard is useful because it gives serious reviewers a compact, honest, inspectable demonstration of AI-assisted medical-device software engineering practice. It is not trying to stand in for a full device program. It is trying to prove that Common Sense Systems can build one with discipline.
 
-For a concise external summary, see [release/public-portfolio-summary.md](/Users/john/git/cssi-pulse-guard/release/public-portfolio-summary.md).
+For a concise external summary, see [release/public-portfolio-summary.md](release/public-portfolio-summary.md).

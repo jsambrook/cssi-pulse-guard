@@ -16,8 +16,8 @@
 
 ## Public-Release Gates
 
-- [ ] Final audience-fit review for README and business-case language
-- [ ] Review whether additional hazard notes are needed for usability, hardware-interface, and cybersecurity risks outside the proof slice
+- [x] Final audience-fit review for README and business-case language
+- [x] Review whether additional hazard notes are needed for usability, hardware-interface, and cybersecurity risks outside the proof slice
 - [ ] Confirm the final public release tag boundary
 - [ ] Confirm the release notes or summary package are adequate for Microsoft Office use
 

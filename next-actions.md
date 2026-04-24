@@ -3,12 +3,10 @@
 
 ## Active
 
-- Refine the public release package and audience-fit language
-- Add hazard review notes for usability, hardware-interface, and cybersecurity risks outside the current proof slice
+- Decide whether the public release baseline is ready for a tag after audience-fit review
 - Add regression seeds or broader generated exploration beyond the current bounded adversarial sequences
 - Decide whether to add a local container execution evidence record once a workstation container engine is available
 - Verify future CI runs continue to stay clear of Node.js 20 deprecation warnings
-- Decide whether the public release baseline is ready for a tag after audience-fit review
 
 ## Waiting
 
@@ -39,4 +37,5 @@
 - Updated GitHub Actions checkout to the Node 24-compatible `v5` line.
 - Recorded CI maintenance evidence for the checkout action upgrade and warning status.
 - Defined and applied objective residual-risk acceptability criteria for the current hazard baseline.
+- Refined the public release package and audience-fit language.
 - Created initial repository structure.

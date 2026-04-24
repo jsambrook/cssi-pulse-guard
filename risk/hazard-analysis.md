@@ -58,7 +58,10 @@ Initial risk priority is estimated as severity x probability. Residual values ar
 
 ## Open Review Items
 
-- Add usability-related hazards for operator arming, confirmation, and alarm response.
-- Add hardware-interface failure modes when a hardware abstraction boundary exists.
-- Add cybersecurity hazards once command/source authentication exists.
-- Revisit conditional acceptance for severity-5 hazards if the repository broadens its claims or proof boundary.
+The current proof slice does not model these areas, but the public release package should still state the boundary clearly:
+
+- Usability: operator arming, confirmation, and alarm-response hazards are out of scope because there is no user-interface model in the current proof boundary.
+- Hardware interface: sensor, actuator, and hardware-abstraction failure modes are out of scope because the current proof boundary stops at the pure Rust transition function.
+- Cybersecurity: command injection, spoofing, and authentication failures are out of scope because there is no communications or trust-boundary model in the current proof boundary.
+
+Future work should add hazard entries if the repository expands into those areas, and severity-5 residual acceptance should be revisited if the proof boundary broadens.
