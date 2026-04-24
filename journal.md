@@ -386,6 +386,34 @@ The repository now has recorded CI evidence that the conventional Rust verificat
 
 Commit the container evidence record and tag the lifecycle baseline as `v0.5.0-containerized-ci-baseline`, then continue with out-of-scope hazard review notes or broader generated exploration.
 
+## 2026-04-24 - GitHub Actions Checkout Upgrade
+
+### Focus
+
+Remove the Node.js 20 deprecation warning by moving workflow checkout steps to the Node 24-compatible `actions/checkout@v5` line.
+
+### Intent
+
+Keep the CI pipeline current and avoid carrying a warning that is already known to be tied to the existing checkout action version.
+
+### Work Done
+
+- Reviewed the project artifacts and selected the GitHub Actions deprecation warning as the highest-value remaining maintenance gap.
+- Updated all checkout steps in `.github/workflows/ci.yml` from `actions/checkout@v4` to `actions/checkout@v5`.
+- Updated `next-actions.md` to track verification of the warning removal.
+
+### Evidence / Test
+
+Workflow-only change. The updated workflow should be verified by the next GitHub Actions run after push.
+
+### Result
+
+The workflow now uses the Node 24-compatible checkout action line recommended by the upstream release notes.
+
+### Next Action
+
+Commit and push the workflow update, then confirm the next CI run no longer reports the Node.js 20 deprecation warning.
+
 ## 2026-04-24 - Residual Risk Acceptability Baseline
 
 ### Focus
