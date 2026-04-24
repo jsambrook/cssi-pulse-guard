@@ -27,6 +27,6 @@ Working tree after creation of:
 
 ## Open Verification Gaps
 
-- Install Kani or add a CI job that runs Kani.
-- Capture Kani tool version and proof output once available.
+- Push the Kani CI workflow and record its proof output once available.
+- Install Kani locally only if local proof execution is needed in addition to CI.
 - Add adversarial or generated test cases for invalid command sequences and interlock combinations.

@@ -131,3 +131,34 @@ The project has a documented tagging strategy for lifecycle baselines such as `v
 ### Next Action
 
 Commit the current baseline and tag it as the first scenario V&V lifecycle baseline after verification passes.
+
+## 2026-04-24 - Kani CI Execution Path
+
+### Focus
+
+Add a CI path for executing the existing Kani proof harnesses.
+
+### Intent
+
+Advance the charter requirement that selected safety invariants are checked with Kani and that CI/CD can report verification status reproducibly.
+
+### Work Done
+
+- Reviewed the active artifact gaps and selected Kani CI execution as the highest-value next step.
+- Checked current Kani documentation and GitHub Action usage guidance.
+- Added a `kani` job to `.github/workflows/ci.yml`.
+- Pinned the CI job to Kani `0.66.0`.
+- Added `verification/kani-runbook.md` for CI and local proof execution.
+- Updated `verification/kani-proof-plan.md`, `evidence/local-verification-2026-04-24.md`, `artifact-map.md`, and `next-actions.md`.
+
+### Evidence / Test
+
+Local Rust verification should be run after this change. Kani proof output is not yet available because the GitHub Actions workflow has not run in this environment.
+
+### Result
+
+The project now has a documented Kani execution path in CI, but proof status remains pending until the workflow is pushed and the CI result is recorded.
+
+### Next Action
+
+Push the Kani CI workflow, review the GitHub Actions result, and record proof evidence or any failure details in `evidence/`.

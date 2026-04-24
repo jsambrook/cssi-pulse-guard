@@ -3,7 +3,7 @@
 
 ## Active
 
-- Add a Kani execution path in CI or document local Kani installation steps
+- Push the Kani CI workflow and record proof results from GitHub Actions
 - Add adversarial or generated tests for invalid command sequences and interlock combinations
 - Draft the top-level portfolio explainer and business case
 - Add a containerized reproducibility baseline
@@ -26,4 +26,5 @@
 - Stood up the Rust workspace, unit-test harness, and CI skeleton.
 - Specified initial Kani proof targets and assumptions.
 - Added scenario tests for full command sequences: power on, monitor, arm, deliver, complete, fault, reset, and power off.
+- Added a Kani CI execution path and local/CI Kani runbook.
 - Created initial repository structure.

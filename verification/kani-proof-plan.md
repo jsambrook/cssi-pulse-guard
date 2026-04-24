@@ -12,6 +12,8 @@ Proof boundary: the pure `transition(current, inputs)` function and data types i
 cargo kani -p pulse_guard_core
 ```
 
+The GitHub Actions workflow runs the same proof target using `model-checking/kani-github-action@v1` pinned to Kani `0.66.0`.
+
 If the local environment does not have Kani installed, run conventional Rust tests first:
 
 ```sh
@@ -30,4 +32,4 @@ cargo test
 - No time model exists yet.
 - No hardware abstraction exists yet.
 - No clinical detection algorithm exists yet.
-- No proof has been run in CI yet.
+- A Kani CI execution path exists, but proof evidence is not available until the workflow runs and results are recorded.

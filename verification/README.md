@@ -6,4 +6,5 @@ Start with:
 
 - `formal-properties.md`
 - `kani-proof-plan.md`
+- `kani-runbook.md`
 - `test-strategy.md`
