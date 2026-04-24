@@ -8,7 +8,7 @@
 - Add hazard review notes for usability, hardware-interface, and cybersecurity risks outside the current proof slice
 - Add regression seeds or broader generated exploration beyond the current bounded adversarial sequences
 - Decide whether to add a local container execution evidence record once a workstation container engine is available
-- Verify the updated GitHub Actions checkout version removes the Node.js 20 deprecation warning
+- Verify future CI runs continue to stay clear of Node.js 20 deprecation warnings
 
 ## Waiting
 
@@ -36,5 +36,6 @@
 - Added a CI execution path for the containerized Rust verification baseline.
 - Executed the containerized Rust verification path in CI and recorded evidence.
 - Updated GitHub Actions checkout to the Node 24-compatible `v5` line.
+- Recorded CI maintenance evidence for the checkout action upgrade and warning status.
 - Defined and applied objective residual-risk acceptability criteria for the current hazard baseline.
 - Created initial repository structure.

@@ -414,6 +414,44 @@ The workflow now uses the Node 24-compatible checkout action line recommended by
 
 Commit and push the workflow update, then confirm the next CI run no longer reports the Node.js 20 deprecation warning.
 
+## 2026-04-24 - GitHub Actions Warning Cleared
+
+### Focus
+
+Verify that the checkout upgrade removed the Node.js 20 deprecation warning from the latest CI run.
+
+### Intent
+
+Close the maintenance item by confirming the repository's workflow now uses the Node 24-compatible checkout action line without reintroducing the deprecation warning.
+
+### Work Done
+
+- Pushed commit `340e42e` to `main`.
+- Waited for GitHub Actions run `24903548750`.
+- Confirmed all three jobs passed.
+- Verified the workflow used `actions/checkout@v5` in the Rust and container jobs.
+- Filtered the logs and confirmed the prior Node.js 20 deprecation warning text was no longer present.
+- Added `evidence/ci-maintenance-2026-04-24.md`.
+- Updated `next-actions.md` to remove the deprecation warning item from active work and replace it with a future monitoring note.
+
+### Evidence / Test
+
+- GitHub Actions workflow `CI`: pass
+- Commit: `340e42eda2289413674318627bce789ce604edb6`
+- Rust checks: pass
+- Containerized Rust verification: pass
+- Kani proofs: pass
+- `actions/checkout@v5` observed in log
+- No Node.js 20 deprecation warning text observed in the filtered job logs
+
+### Result
+
+The checkout-action maintenance item is closed for the current workflow state.
+
+### Next Action
+
+Continue with hazard review notes for usability, hardware-interface, and cybersecurity risks, or refine the outward-facing explainer for final audience fit.
+
 ## 2026-04-24 - Residual Risk Acceptability Baseline
 
 ### Focus
