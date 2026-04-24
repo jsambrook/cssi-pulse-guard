@@ -286,3 +286,39 @@ The repository now has a more explicit and repeatable rule for deciding when a l
 ### Next Action
 
 Commit the tagging-threshold clarification, then continue with containerized reproducibility or residual-risk acceptability criteria.
+
+## 2026-04-24 - Container Reproducibility Baseline
+
+### Focus
+
+Add the first containerized reproducibility path for the repository.
+
+### Intent
+
+Advance the charter requirement for containerized reproducibility by making the conventional Rust verification bar runnable in a pinned container environment.
+
+### Work Done
+
+- Reviewed the current artifact gaps and selected containerized reproducibility as the highest-value next step.
+- Confirmed the local development environment does not currently have `docker` or `podman`.
+- Added `Dockerfile` pinned to `rust:1.95.0-bookworm`.
+- Added `.dockerignore`.
+- Added `container/run-rust-verification.sh`.
+- Added `container/runbook.md` and `container/README.md`.
+- Updated `artifact-map.md`, `implementation/README.md`, `next-actions.md`, and local evidence notes.
+
+### Evidence / Test
+
+- `cargo fmt --all --check`: pass
+- `cargo test --workspace --all-targets`: pass, 14 tests
+- `cargo clippy --workspace --all-targets -- -D warnings`: pass
+- `docker --version`: unavailable in local environment
+- `podman --version`: unavailable in local environment
+
+### Result
+
+The repository now has a pinned container baseline for the conventional Rust verification bar, but container execution evidence is still pending because no local container engine is available in this environment.
+
+### Next Action
+
+Commit the container baseline, then execute it and record evidence once a container engine is available, or move next to residual-risk acceptability criteria.

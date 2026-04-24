@@ -3,11 +3,12 @@
 
 ## Active
 
-- Add a containerized reproducibility baseline
 - Define objective residual-risk acceptability criteria for the hazard baseline
 - Review GitHub Actions Node.js 20 deprecation warning and update action versions when replacements are available
 - Extend generated testing to multi-step adversarial command sequences and regression seeds
 - Refine the outward-facing explainer for release preparation and final audience fit
+- Execute the containerized Rust verification path and record container evidence
+- Decide whether a later container baseline should include Kani or stay CI-only for proofs
 
 ## Waiting
 
@@ -30,4 +31,5 @@
 - Pushed the CI workflow and recorded passing Kani proof evidence from GitHub Actions.
 - Added generated adversarial tests for invalid command sequences and interlock combinations.
 - Drafted the top-level portfolio explainer and business case.
+- Added a containerized Rust verification baseline and runbook.
 - Created initial repository structure.

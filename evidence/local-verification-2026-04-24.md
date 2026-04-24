@@ -16,6 +16,7 @@ Working tree after creation of:
 - GitHub Actions CI skeleton
 - scenario test strategy and command-sequence scenario tests
 - generated adversarial test strategy and invalid-command/interlock matrix tests
+- containerized Rust verification baseline and runbook
 
 ## Commands and Results
 
@@ -31,3 +32,4 @@ Working tree after creation of:
 - CI proof evidence is now recorded in `ci-verification-2026-04-24.md`.
 - Install Kani locally only if local proof execution is needed in addition to CI.
 - Extend generated testing from one-step matrices to multi-step adversarial command sequences.
+- Execute the Docker container path and record container evidence once a local container engine is available.
