@@ -352,3 +352,34 @@ The repository now has a project-specific residual-risk acceptance frame and an 
 ### Next Action
 
 Commit the residual-risk baseline, then move next to multi-step adversarial testing, container execution evidence, or expanded out-of-scope hazard review notes.
+
+## 2026-04-24 - Multi-Step Adversarial Sequence Baseline
+
+### Focus
+
+Extend adversarial regression coverage from one-step matrices to bounded hostile command sequences.
+
+### Intent
+
+Increase verification depth by checking that the therapy-control logic preserves delivery gating, fault latching, and power-off dominance across multi-step hostile paths rather than only one-step combinations.
+
+### Work Done
+
+- Reviewed the remaining gaps and selected multi-step adversarial testing as the highest-value next step.
+- Extended `implementation/pulse_guard_core/tests/adversarial.rs` with bounded hostile regression sequences.
+- Updated `verification/adversarial-test-strategy.md` and `verification/test-strategy.md`.
+- Updated local verification evidence, `artifact-map.md`, and `next-actions.md`.
+
+### Evidence / Test
+
+- `cargo fmt --all --check`: pass
+- `cargo test --workspace --all-targets`: pass, 15 tests
+- `cargo clippy --workspace --all-targets -- -D warnings`: pass
+
+### Result
+
+The repository now includes bounded multi-step adversarial sequence coverage in addition to the one-step generated matrix tests.
+
+### Next Action
+
+Commit this adversarial sequence baseline, then move to container execution evidence, broader generated sequence exploration, or out-of-scope hazard review notes.

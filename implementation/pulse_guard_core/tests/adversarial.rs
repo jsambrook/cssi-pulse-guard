@@ -104,6 +104,49 @@ fn armed_state_drops_out_of_armed_when_any_delivery_precondition_fails() {
     }
 }
 
+#[test]
+fn adversarial_sequences_preserve_delivery_and_fault_safety_properties() {
+    for scenario in adversarial_sequences() {
+        let mut state = scenario.initial_state;
+
+        for step in scenario.steps {
+            let outcome = transition(state, *step);
+
+            if outcome.therapy_delivery_requested {
+                assert_eq!(state, TherapyState::Armed);
+                assert_eq!(step.command, Command::DeliverTherapy);
+                assert!(step.patient_connected);
+                assert!(!step.therapy_inhibit);
+                assert!(step.valid_therapy_detection);
+                assert!(step.hardware_ready);
+                assert!(step.self_test_passed);
+                assert_eq!(outcome.state, TherapyState::Delivering);
+            }
+
+            if state == TherapyState::Faulted {
+                assert!(!outcome.therapy_delivery_requested);
+                assert!(!outcome.therapy_output_enabled);
+            }
+
+            if step.command == Command::PowerOff {
+                assert_eq!(outcome.state, TherapyState::Off);
+                assert!(!outcome.therapy_output_enabled);
+                assert!(!outcome.therapy_delivery_requested);
+                assert!(!outcome.fault_latched);
+            }
+
+            if step.command == Command::FaultDetected {
+                assert_eq!(outcome.state, TherapyState::Faulted);
+                assert!(!outcome.therapy_output_enabled);
+                assert!(!outcome.therapy_delivery_requested);
+                assert!(outcome.fault_latched);
+            }
+
+            state = outcome.state;
+        }
+    }
+}
+
 fn adversarial_inputs(command: Command) -> Vec<TherapyInputs> {
     let mut cases = Vec::new();
 
@@ -134,6 +177,99 @@ fn invalid_commands_for(state: TherapyState) -> Vec<Command> {
         .into_iter()
         .filter(|command| !is_valid_command_for(state, *command))
         .collect()
+}
+
+#[derive(Clone, Copy)]
+struct SequenceScenario {
+    initial_state: TherapyState,
+    steps: &'static [TherapyInputs],
+}
+
+const NOMINAL_HOSTILE_RECOVERY: [TherapyInputs; 7] = [
+    TherapyInputs::nominal(Command::PowerOn),
+    TherapyInputs::nominal(Command::StartMonitoring),
+    TherapyInputs::nominal(Command::Arm),
+    TherapyInputs {
+        therapy_inhibit: true,
+        ..TherapyInputs::nominal(Command::DeliverTherapy)
+    },
+    TherapyInputs::nominal(Command::Arm),
+    TherapyInputs::nominal(Command::DeliverTherapy),
+    TherapyInputs::nominal(Command::TherapyComplete),
+];
+
+const FAULT_LATCH_SEQUENCE: [TherapyInputs; 6] = [
+    TherapyInputs::nominal(Command::PowerOn),
+    TherapyInputs::nominal(Command::StartMonitoring),
+    TherapyInputs::nominal(Command::Arm),
+    TherapyInputs::nominal(Command::FaultDetected),
+    TherapyInputs {
+        hardware_ready: false,
+        ..TherapyInputs::nominal(Command::ResetFault)
+    },
+    TherapyInputs::nominal(Command::ResetFault),
+];
+
+const INVALID_COMMAND_STORM: [TherapyInputs; 8] = [
+    TherapyInputs::nominal(Command::DeliverTherapy),
+    TherapyInputs::nominal(Command::Arm),
+    TherapyInputs::nominal(Command::Disarm),
+    TherapyInputs::nominal(Command::PowerOn),
+    TherapyInputs::nominal(Command::DeliverTherapy),
+    TherapyInputs::nominal(Command::StartMonitoring),
+    TherapyInputs::nominal(Command::TherapyComplete),
+    TherapyInputs::nominal(Command::PowerOff),
+];
+
+const DETECTION_AND_READINESS_CHURN: [TherapyInputs; 8] = [
+    TherapyInputs::nominal(Command::PowerOn),
+    TherapyInputs::nominal(Command::StartMonitoring),
+    TherapyInputs {
+        valid_therapy_detection: false,
+        ..TherapyInputs::nominal(Command::Arm)
+    },
+    TherapyInputs::nominal(Command::Arm),
+    TherapyInputs {
+        hardware_ready: false,
+        ..TherapyInputs::nominal(Command::NoCommand)
+    },
+    TherapyInputs::nominal(Command::Arm),
+    TherapyInputs::nominal(Command::DeliverTherapy),
+    TherapyInputs::nominal(Command::TherapyComplete),
+];
+
+const FAULTED_COMMAND_STORM: [TherapyInputs; 6] = [
+    TherapyInputs::nominal(Command::NoCommand),
+    TherapyInputs::nominal(Command::DeliverTherapy),
+    TherapyInputs::nominal(Command::Arm),
+    TherapyInputs::nominal(Command::StartMonitoring),
+    TherapyInputs::nominal(Command::ResetFault),
+    TherapyInputs::nominal(Command::PowerOff),
+];
+
+fn adversarial_sequences() -> Vec<SequenceScenario> {
+    vec![
+        SequenceScenario {
+            initial_state: TherapyState::Off,
+            steps: &NOMINAL_HOSTILE_RECOVERY,
+        },
+        SequenceScenario {
+            initial_state: TherapyState::Off,
+            steps: &FAULT_LATCH_SEQUENCE,
+        },
+        SequenceScenario {
+            initial_state: TherapyState::Off,
+            steps: &INVALID_COMMAND_STORM,
+        },
+        SequenceScenario {
+            initial_state: TherapyState::Off,
+            steps: &DETECTION_AND_READINESS_CHURN,
+        },
+        SequenceScenario {
+            initial_state: TherapyState::Faulted,
+            steps: &FAULTED_COMMAND_STORM,
+        },
+    ]
 }
 
 fn is_valid_command_for(state: TherapyState, command: Command) -> bool {

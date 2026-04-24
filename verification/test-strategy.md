@@ -10,7 +10,7 @@ This strategy defines the first conventional automated tests for the therapy-con
 |---|---|---|---|
 | Unit tests | `implementation/pulse_guard_core/src/lib.rs` | Check focused transition rules and individual safety interlocks. | Implemented |
 | Scenario tests | `implementation/pulse_guard_core/tests/scenarios.rs` | Check multi-step command sequences across normal, blocked, inhibit, fault, reset, and power-off behavior. | Implemented |
-| Generated adversarial tests | `implementation/pulse_guard_core/tests/adversarial.rs` | Check invalid commands and hostile interlock combinations over a generated state-command-input matrix. | Implemented |
+| Generated adversarial tests | `implementation/pulse_guard_core/tests/adversarial.rs` | Check invalid commands, hostile interlock combinations, and bounded adversarial command sequences. | Implemented |
 | Kani proofs | `implementation/pulse_guard_core/src/lib.rs` under `cfg(kani)` | Check selected one-step safety invariants over modeled state and command inputs. | Harnesses drafted; not executed locally |
 | Fault-injection tests | Future test module | Exercise expanded fault inputs and recovery paths as the model grows. | Not started |
 
@@ -36,6 +36,6 @@ Each verification evidence entry should include:
 ## Current Limits
 
 - Scenario tests are deterministic examples, not exhaustive proofs.
-- Generated adversarial tests are one-step matrix exploration, not full sequence exploration.
+- Generated adversarial tests cover one-step matrices and bounded hostile sequences, but not exhaustive sequence exploration.
 - No timing, alarm, UI, hardware abstraction, or clinical detection behavior is represented.
-- No adversarial test-generation workflow has been added yet.
+- No fully automated adversarial sequence generator exists yet.

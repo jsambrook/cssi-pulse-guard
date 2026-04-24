@@ -16,6 +16,7 @@ Working tree after creation of:
 - GitHub Actions CI skeleton
 - scenario test strategy and command-sequence scenario tests
 - generated adversarial test strategy and invalid-command/interlock matrix tests
+- bounded adversarial command-sequence regression tests
 - containerized Rust verification baseline and runbook
 
 ## Commands and Results
@@ -23,7 +24,7 @@ Working tree after creation of:
 | Command | Result | Notes |
 |---|---|---|
 | `cargo fmt --all --check` | Pass | Formatting clean after applying `cargo fmt --all`. |
-| `cargo test --workspace --all-targets` | Pass | 14 tests passed: 6 unit tests, 5 scenario tests, and 3 adversarial/generated tests. |
+| `cargo test --workspace --all-targets` | Pass | 15 tests passed: 6 unit tests, 5 scenario tests, and 4 adversarial/generated tests. |
 | `cargo clippy --workspace --all-targets -- -D warnings` | Pass | No clippy warnings. |
 | `cargo kani -p pulse_guard_core` | Not run | Local Cargo installation does not include the `kani` subcommand. |
 
@@ -31,5 +32,5 @@ Working tree after creation of:
 
 - CI proof evidence is now recorded in `ci-verification-2026-04-24.md`.
 - Install Kani locally only if local proof execution is needed in addition to CI.
-- Extend generated testing from one-step matrices to multi-step adversarial command sequences.
+- Add regression seeds or generated exploration beyond the current bounded adversarial sequences.
 - Execute the Docker container path and record container evidence once a local container engine is available.

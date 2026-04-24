@@ -29,7 +29,7 @@
 | Initial software requirements for therapy-control state transitions and interlocks | Initial artifact for the project | Baseline drafted |
 | Architecture note describing the pure Rust transition function and proof boundary | Initial artifact for the project | Baseline drafted |
 | Rust therapy-control state-machine skeleton | Initial artifact for the project | Implemented with unit tests |
-| Conventional automated test strategy and starter scenarios | Initial artifact for the project | Strategy, starter scenarios, and generated adversarial tests implemented |
+| Conventional automated test strategy and starter scenarios | Initial artifact for the project | Strategy, starter scenarios, and bounded adversarial tests implemented |
 | Formal property list linked to hazards and requirements | Initial artifact for the project | Baseline drafted |
 | Initial Kani proof harness plan for shock-inhibit and armed-state invariants | Initial artifact for the project | CI proof evidence recorded for five initial invariants |
 | CI/CD and containerization plan | Initial artifact for the project | Rust and Kani CI jobs pass; Rust verification container baseline drafted |
