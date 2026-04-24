@@ -66,3 +66,25 @@ Severity-5 residual hazards now require explicit review notes even when conditio
 ### Revisit When
 
 Revisit when hardware, timing, alarms, usability, cybersecurity, or broader product claims enter scope.
+
+## Public Release Package Prioritization
+
+### Decision
+
+Prioritize the public release package over deeper technical refinement when the technical proof slice is already stable.
+
+### Context
+
+The project now has traceable requirements, tests, Kani evidence, containerized CI evidence, and a documented release/tagging strategy. The remaining gap is making the repository easier for external reviewers to assess quickly.
+
+### Rationale
+
+A compact release package improves the project's practical value for hiring managers, prospective clients, and reviewers without changing the proof boundary or requiring new claims.
+
+### Consequences
+
+The next increment should focus on audience-fit language, release readiness, and concise external summaries rather than expanding proof scope by default.
+
+### Revisit When
+
+Revisit if the repository needs a new technical baseline before public release.

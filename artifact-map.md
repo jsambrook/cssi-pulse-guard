@@ -34,6 +34,7 @@
 | Initial Kani proof harness plan for shock-inhibit and armed-state invariants | Initial artifact for the project | CI proof evidence recorded for five initial invariants |
 | CI/CD and containerization plan | Initial artifact for the project | Rust, container, and Kani CI jobs pass; container verification evidence recorded |
 | Top-level explainer of the technical and business case for the portfolio project | Initial artifact for the project | Baseline drafted in README and business-case document |
+| Public release package (portfolio summary and readiness checklist) | Package the repository for external review and public release preparation | Baseline drafted |
 | Release and tagging strategy | Preserve meaningful lifecycle baselines over time | Baseline drafted |
 
 ## Supporting Artifacts

@@ -91,11 +91,13 @@ Those limits are part of the value proposition. They show disciplined scope cont
 
 The next additions with the highest portfolio value are:
 
-- containerized reproducibility so reviewers can run the same verification path more easily
-- stronger residual-risk rationale for the current hazard baseline
-- richer adversarial sequence generation
-- continued top-level documentation polish for external readers
+- audience-fit review and final release packaging for the top-level explainer
+- additional hazard review notes for usability, hardware-interface, and cybersecurity risks outside the proof slice
+- continued verification depth through generated adversarial sequence expansion
+- follow-on release preparation for the public portfolio baseline
 
 ## Bottom Line
 
 CSSI Pulse Guard is useful because it gives serious reviewers a compact, honest, inspectable demonstration of AI-assisted medical-device software engineering practice. It is not trying to stand in for a full device program. It is trying to prove that Common Sense Systems can build one with discipline.
+
+For a concise external summary, see [release/public-portfolio-summary.md](/Users/john/git/cssi-pulse-guard/release/public-portfolio-summary.md).

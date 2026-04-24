@@ -258,6 +258,37 @@ The repository now opens with a clear explanation of scope, proof boundary, curr
 
 Commit the explainer baseline, then move to containerized reproducibility or residual-risk acceptability criteria.
 
+## 2026-04-24 - Public Release Package Baseline
+
+### Focus
+
+Prepare the repository for external review by tightening the public-facing summary and release-readiness controls.
+
+### Intent
+
+Make the project easier to assess at a glance without changing the proof boundary or inflating claims.
+
+### Work Done
+
+- Reviewed the charter, artifact map, next actions, business case, and top-level README.
+- Identified the public release package as the highest-value next step because the repository already had a strong technical baseline but still lacked a compact reviewer-facing summary and release checklist.
+- Added `release/README.md`.
+- Added `release/public-portfolio-summary.md`.
+- Added `release/release-readiness-checklist.md`.
+- Updated `README.md`, `business-case.md`, `artifact-map.md`, `next-actions.md`, `decision-log.md`, and this journal entry.
+
+### Evidence / Test
+
+Documentation change only. No behavior or verification logic changed.
+
+### Result
+
+The repository now has a release-oriented package that helps external reviewers understand the project, its evidence, and its remaining release gates.
+
+### Next Action
+
+Review the audience-fit language, then decide whether the release package is ready to anchor the final public portfolio tag.
+
 ## 2026-04-24 - Tagging Threshold Clarification
 
 ### Focus

@@ -3,12 +3,12 @@
 
 ## Active
 
-- Refine the outward-facing explainer for release preparation and final audience fit
-- Decide whether a later container baseline should include Kani or stay CI-only for proofs
+- Refine the public release package and audience-fit language
 - Add hazard review notes for usability, hardware-interface, and cybersecurity risks outside the current proof slice
 - Add regression seeds or broader generated exploration beyond the current bounded adversarial sequences
 - Decide whether to add a local container execution evidence record once a workstation container engine is available
 - Verify future CI runs continue to stay clear of Node.js 20 deprecation warnings
+- Decide whether the public release baseline is ready for a tag after audience-fit review
 
 ## Waiting
 
@@ -32,6 +32,7 @@
 - Added generated adversarial tests for invalid command sequences and interlock combinations.
 - Extended adversarial testing to bounded multi-step command sequences.
 - Drafted the top-level portfolio explainer and business case.
+- Drafted the public release package with summary and readiness checklist.
 - Added a containerized Rust verification baseline and runbook.
 - Added a CI execution path for the containerized Rust verification baseline.
 - Executed the containerized Rust verification path in CI and recorded evidence.

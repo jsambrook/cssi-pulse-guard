@@ -40,6 +40,7 @@ See:
 - [software-requirements.md](/Users/john/git/cssi-pulse-guard/requirements/software-requirements.md)
 - [therapy-state-machine.md](/Users/john/git/cssi-pulse-guard/design/therapy-state-machine.md)
 - [ci-verification-2026-04-24.md](/Users/john/git/cssi-pulse-guard/evidence/ci-verification-2026-04-24.md)
+- [release/public-portfolio-summary.md](/Users/john/git/cssi-pulse-guard/release/public-portfolio-summary.md)
 
 ## Proof Boundary and Non-Claims
 
@@ -60,10 +61,10 @@ The current proof boundary is the pure Rust transition function in [lib.rs](/Use
 - Use the [artifact map](/Users/john/git/cssi-pulse-guard/artifact-map.md) to see expected deliverables and status.
 - Review [verification/README.md](/Users/john/git/cssi-pulse-guard/verification/README.md) and [evidence/README.md](/Users/john/git/cssi-pulse-guard/evidence/README.md) for the current verification and evidence trail.
 - Read the external-facing [business-case.md](/Users/john/git/cssi-pulse-guard/business-case.md) for why this project matters commercially and professionally.
+- Use the [release package](/Users/john/git/cssi-pulse-guard/release/README.md) for a concise public-release view.
 
 ## Current Priorities
 
-- add containerized reproducibility
-- define objective residual-risk acceptability criteria
-- extend generated testing to multi-step adversarial sequences
+- refine the public release package and audience-fit language
+- review whether additional hazard notes are needed for usability, hardware-interface, and cybersecurity risks
 - keep CI dependencies current as GitHub Actions platform requirements change
