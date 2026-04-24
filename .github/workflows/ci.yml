@@ -27,6 +27,20 @@ jobs:
       - name: Run clippy
         run: cargo clippy --workspace --all-targets -- -D warnings
 
+  container-rust:
+    name: Containerized Rust verification
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build verification container
+        run: docker build -t cssi-pulse-guard-rust-verification .
+
+      - name: Run verification container
+        run: docker run --rm cssi-pulse-guard-rust-verification
+
   kani:
     name: Kani proofs
     runs-on: ubuntu-latest

@@ -353,6 +353,35 @@ The repository now has a project-specific residual-risk acceptance frame and an 
 
 Commit the residual-risk baseline, then move next to multi-step adversarial testing, container execution evidence, or expanded out-of-scope hazard review notes.
 
+## 2026-04-24 - Container CI Execution Path
+
+### Focus
+
+Turn the drafted container baseline into an executable CI path.
+
+### Intent
+
+Close the gap between having a Dockerfile and having actual evidence that the repository's conventional Rust verification bar runs reproducibly in a pinned container environment.
+
+### Work Done
+
+- Reviewed the remaining gaps and selected container execution evidence as the highest-value next step.
+- Added a `container-rust` job to `.github/workflows/ci.yml`.
+- Updated `container/runbook.md` to describe CI execution and evidence expectations.
+- Updated `artifact-map.md` and `next-actions.md` to reflect that the container path now exists in CI but is not yet evidenced.
+
+### Evidence / Test
+
+Local Rust verification should be run after this change. Container execution evidence is not yet available until the GitHub Actions workflow runs and its result is recorded.
+
+### Result
+
+The repository now has a CI execution path for the containerized Rust verification baseline.
+
+### Next Action
+
+Commit and push the container CI path, then record the container verification result from GitHub Actions.
+
 ## 2026-04-24 - Multi-Step Adversarial Sequence Baseline
 
 ### Focus

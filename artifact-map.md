@@ -32,7 +32,7 @@
 | Conventional automated test strategy and starter scenarios | Initial artifact for the project | Strategy, starter scenarios, and bounded adversarial tests implemented |
 | Formal property list linked to hazards and requirements | Initial artifact for the project | Baseline drafted |
 | Initial Kani proof harness plan for shock-inhibit and armed-state invariants | Initial artifact for the project | CI proof evidence recorded for five initial invariants |
-| CI/CD and containerization plan | Initial artifact for the project | Rust and Kani CI jobs pass; Rust verification container baseline drafted |
+| CI/CD and containerization plan | Initial artifact for the project | Rust and Kani CI jobs pass; container verification CI path drafted |
 | Top-level explainer of the technical and business case for the portfolio project | Initial artifact for the project | Baseline drafted in README and business-case document |
 | Release and tagging strategy | Preserve meaningful lifecycle baselines over time | Baseline drafted |
 

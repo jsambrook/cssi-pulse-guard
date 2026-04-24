@@ -35,6 +35,18 @@ docker run --rm cssi-pulse-guard-rust-verification
 
 A successful run demonstrates that the conventional Rust verification bar can be executed in a pinned container environment without depending on the host Rust toolchain.
 
+## CI Execution
+
+GitHub Actions also executes the container path in `.github/workflows/ci.yml`.
+
+The CI job:
+
+- builds the repository `Dockerfile`
+- runs the resulting container image
+- treats a passing container run as reproducibility evidence for the conventional Rust verification bar
+
+After a successful CI run, record the workflow run reference in `evidence/`.
+
 ## Current Limits
 
 - The local development environment used for this update does not have Docker or Podman installed, so the container path has not been executed locally.

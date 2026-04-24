@@ -5,10 +5,10 @@
 
 - Review GitHub Actions Node.js 20 deprecation warning and update action versions when replacements are available
 - Refine the outward-facing explainer for release preparation and final audience fit
-- Execute the containerized Rust verification path and record container evidence
 - Decide whether a later container baseline should include Kani or stay CI-only for proofs
 - Add hazard review notes for usability, hardware-interface, and cybersecurity risks outside the current proof slice
 - Add regression seeds or broader generated exploration beyond the current bounded adversarial sequences
+- Push the container CI path and record container verification evidence
 
 ## Waiting
 
@@ -33,5 +33,6 @@
 - Extended adversarial testing to bounded multi-step command sequences.
 - Drafted the top-level portfolio explainer and business case.
 - Added a containerized Rust verification baseline and runbook.
+- Added a CI execution path for the containerized Rust verification baseline.
 - Defined and applied objective residual-risk acceptability criteria for the current hazard baseline.
 - Created initial repository structure.
