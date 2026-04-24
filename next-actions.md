@@ -3,11 +3,11 @@
 
 ## Active
 
-- Draft the top-level portfolio explainer and business case
 - Add a containerized reproducibility baseline
 - Define objective residual-risk acceptability criteria for the hazard baseline
 - Review GitHub Actions Node.js 20 deprecation warning and update action versions when replacements are available
 - Extend generated testing to multi-step adversarial command sequences and regression seeds
+- Refine the outward-facing explainer for release preparation and final audience fit
 
 ## Waiting
 
@@ -29,4 +29,5 @@
 - Added a Kani CI execution path and local/CI Kani runbook.
 - Pushed the CI workflow and recorded passing Kani proof evidence from GitHub Actions.
 - Added generated adversarial tests for invalid command sequences and interlock combinations.
+- Drafted the top-level portfolio explainer and business case.
 - Created initial repository structure.

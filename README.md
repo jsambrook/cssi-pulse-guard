@@ -1,25 +1,69 @@
 
 # CSSI Pulse Guard
 
-## Purpose
+CSSI Pulse Guard is an outward-facing portfolio project for Common Sense Systems, Inc. It demonstrates a narrow, defensible slice of AI-assisted medical-device software development practice: risk-informed requirements, traceable design, Rust implementation, conventional verification, Kani-based formal checks, CI evidence, and explicit non-claims.
 
-Create an outward-facing, AI-led portfolio project for Common Sense Systems, Inc. that demonstrates credible medical-device software development practice, verification and validation discipline, and recursive AI-assisted artifact improvement across the lifecycle.
+The modeled product slice is a plausible therapy-control state machine. It is not a complete device. The current proof boundary is a pure Rust transition function that decides state changes and therapy-request outputs under interlock, detection, readiness, and fault conditions.
 
-## Audience
+## Why This Repository Exists
 
-Hiring managers, prospective medical-device clients, quality and regulatory reviewers, engineering peers, talent-network evaluators such as Toptal and Upwork, and internal Common Sense Systems stakeholders.
+This repository is meant to answer a specific question for technical reviewers, prospective clients, and hiring evaluators:
 
-## Profile
+Can Common Sense Systems show current, disciplined capability in safety-oriented software development with traceability and verification evidence that a serious reviewer can inspect?
 
-embedded-medical-device-software
+The answer here is intentionally narrow. The repository does not claim full device development, clinical validation, or submission readiness. It shows a credible first proof slice with artifacts that line up from hazard to requirement to design to code to tests to proof evidence.
 
-## Useful First Version
+## Current Baseline
 
-A small but credible therapy-control state-machine project in Rust with traceable hazards and risk controls, selected IEC 62304 and ISO 14971 aligned artifacts, conventional automated tests, AI-assisted adversarial testing, narrow Kani-based formal verification of safety invariants, CI/CD automation, containerized reproducibility, and a top-level explainer describing the technical and business case for the portfolio project.
+The repository currently includes:
 
-## Getting Started
+- hazard analysis and linked safety invariants for therapy-control logic
+- traceable software requirements and a state-machine design note
+- a dependency-light Rust crate implementing the pure transition function
+- unit tests, scenario tests, and generated adversarial regression tests
+- Kani proof harnesses with passing CI-recorded proof evidence for five initial invariants
+- GitHub Actions CI for Rust checks and Kani proofs
+- lifecycle controls including a journal, decision log, artifact map, next actions, and release/tagging strategy
 
-1. Read `charter.md`.
-2. Review `artifact-map.md`.
-3. Choose one item from `next-actions.md`.
-4. Record progress in `journal.md`.
+## What Has Been Verified
+
+The current verification evidence supports these narrow claims:
+
+- therapy request remains gated by arming, inhibit, detection, connection, readiness, and self-test conditions
+- `FaultDetected` drives the controller into a faulted safe state with therapy disabled
+- `PowerOff` dominates and clears therapy-related outputs
+- five selected one-step safety invariants have been checked with Kani in CI
+
+See:
+
+- [hazard-analysis.md](/Users/john/git/cssi-pulse-guard/risk/hazard-analysis.md)
+- [software-requirements.md](/Users/john/git/cssi-pulse-guard/requirements/software-requirements.md)
+- [therapy-state-machine.md](/Users/john/git/cssi-pulse-guard/design/therapy-state-machine.md)
+- [ci-verification-2026-04-24.md](/Users/john/git/cssi-pulse-guard/evidence/ci-verification-2026-04-24.md)
+
+## Proof Boundary and Non-Claims
+
+This repository does not claim:
+
+- full formal verification of a complete medical device
+- clinical validation
+- hardware validation or energy-delivery verification
+- real-time scheduling correctness
+- cybersecurity assurance
+- market-submission readiness
+
+The current proof boundary is the pure Rust transition function in [lib.rs](/Users/john/git/cssi-pulse-guard/implementation/pulse_guard_core/src/lib.rs).
+
+## Repository Guide
+
+- Start with the [project charter](/Users/john/git/cssi-pulse-guard/charter.md) for scope and constraints.
+- Use the [artifact map](/Users/john/git/cssi-pulse-guard/artifact-map.md) to see expected deliverables and status.
+- Review [verification/README.md](/Users/john/git/cssi-pulse-guard/verification/README.md) and [evidence/README.md](/Users/john/git/cssi-pulse-guard/evidence/README.md) for the current verification and evidence trail.
+- Read the external-facing [business-case.md](/Users/john/git/cssi-pulse-guard/business-case.md) for why this project matters commercially and professionally.
+
+## Current Priorities
+
+- add containerized reproducibility
+- define objective residual-risk acceptability criteria
+- extend generated testing to multi-step adversarial sequences
+- keep CI dependencies current as GitHub Actions platform requirements change

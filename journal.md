@@ -228,3 +228,32 @@ The project now includes generated adversarial regression coverage over invalid 
 ### Next Action
 
 Commit this adversarial test baseline, then either extend generation to multi-step command sequences or add the containerized reproducibility baseline.
+
+## 2026-04-24 - Portfolio Explainer Baseline
+
+### Focus
+
+Turn the repository's top-level entry point into a credible outward-facing explainer.
+
+### Intent
+
+Close the biggest remaining public-facing gap by making the repository understandable to prospective clients, hiring evaluators, and technical reviewers without requiring them to reconstruct the project from internal artifact files.
+
+### Work Done
+
+- Reviewed the current outward-facing artifacts and identified the missing explainer/business-case baseline as the highest-value next step.
+- Rewrote `README.md` as the top-level portfolio explainer.
+- Added `business-case.md` for external commercial and hiring audiences.
+- Updated `artifact-map.md` and `next-actions.md` to reflect the new baseline.
+
+### Evidence / Test
+
+Documentation change only. No behavior or verification logic changed.
+
+### Result
+
+The repository now opens with a clear explanation of scope, proof boundary, current evidence, non-claims, and commercial purpose.
+
+### Next Action
+
+Commit the explainer baseline, then move to containerized reproducibility or residual-risk acceptability criteria.

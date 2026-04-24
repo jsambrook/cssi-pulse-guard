@@ -32,7 +32,7 @@
 | Formal property list linked to hazards and requirements | Initial artifact for the project | Baseline drafted |
 | Initial Kani proof harness plan for shock-inhibit and armed-state invariants | Initial artifact for the project | CI proof evidence recorded for five initial invariants |
 | CI/CD and containerization plan | Initial artifact for the project | Rust and Kani CI jobs pass; containerization not started |
-| Top-level explainer of the technical and business case for the portfolio project | Initial artifact for the project | Not started |
+| Top-level explainer of the technical and business case for the portfolio project | Initial artifact for the project | Baseline drafted in README and business-case document |
 | Release and tagging strategy | Preserve meaningful lifecycle baselines over time | Baseline drafted |
 
 ## Supporting Artifacts
