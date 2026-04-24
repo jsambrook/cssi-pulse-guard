@@ -1,3 +1,7 @@
-# requirements
+# Requirements Artifacts
 
-Purpose for this folder in `CSSI Pulse Guard`.
+This folder contains traceable software requirements for the therapy-control state-machine slice.
+
+Start with:
+
+- `software-requirements.md`

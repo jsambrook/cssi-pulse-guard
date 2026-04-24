@@ -1,0 +1,8 @@
+[workspace]
+members = ["implementation/pulse_guard_core"]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/jsambrook/cssi-pulse-guard"

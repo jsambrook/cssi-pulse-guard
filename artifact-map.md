@@ -13,6 +13,7 @@
 - formal verification report
 - verification and validation evidence package
 - AI workflow and recursive-improvement process documentation
+- release and tagging process documentation
 - GitHub Actions CI/CD pipeline
 - Docker or container specification
 - top-level portfolio explainer and business-case documentation
@@ -22,16 +23,17 @@
 
 | Artifact | Purpose | Status |
 |---|---|---|
-| Project charter describing the AI-led portfolio objective and proof boundary | Initial artifact for the project | Not started |
-| Hazard and risk-control starter set for unintended therapy delivery and related safety concerns | Initial artifact for the project | Not started |
-| Initial software requirements for therapy-control state transitions and interlocks | Initial artifact for the project | Not started |
-| Architecture note describing the pure Rust transition function and proof boundary | Initial artifact for the project | Not started |
-| Rust therapy-control state-machine skeleton | Initial artifact for the project | Not started |
-| Conventional automated test strategy and starter scenarios | Initial artifact for the project | Not started |
-| Formal property list linked to hazards and requirements | Initial artifact for the project | Not started |
-| Initial Kani proof harness plan for shock-inhibit and armed-state invariants | Initial artifact for the project | Not started |
-| CI/CD and containerization plan | Initial artifact for the project | Not started |
+| Project charter describing the AI-led portfolio objective and proof boundary | Initial artifact for the project | Baseline exists |
+| Hazard and risk-control starter set for unintended therapy delivery and related safety concerns | Initial artifact for the project | Baseline drafted |
+| Initial software requirements for therapy-control state transitions and interlocks | Initial artifact for the project | Baseline drafted |
+| Architecture note describing the pure Rust transition function and proof boundary | Initial artifact for the project | Baseline drafted |
+| Rust therapy-control state-machine skeleton | Initial artifact for the project | Implemented with unit tests |
+| Conventional automated test strategy and starter scenarios | Initial artifact for the project | Strategy and starter scenarios implemented |
+| Formal property list linked to hazards and requirements | Initial artifact for the project | Baseline drafted |
+| Initial Kani proof harness plan for shock-inhibit and armed-state invariants | Initial artifact for the project | Harnesses drafted; not executed locally |
+| CI/CD and containerization plan | Initial artifact for the project | CI skeleton added; containerization not started |
 | Top-level explainer of the technical and business case for the portfolio project | Initial artifact for the project | Not started |
+| Release and tagging strategy | Preserve meaningful lifecycle baselines over time | Baseline drafted |
 
 ## Supporting Artifacts
 
