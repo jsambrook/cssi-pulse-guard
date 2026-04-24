@@ -603,3 +603,32 @@ The public release now includes a PDF summary suitable for office-oriented revie
 ### Next Action
 
 Keep the Markdown summary as the source of truth and regenerate the PDF asset if the public summary changes.
+
+## 2026-04-24 - Public Summary PDF Styling Pass
+
+### Focus
+
+Improve the visual presentation of the public summary PDF without changing the Markdown source.
+
+### Intent
+
+Make the release asset feel more polished and office-friendly by using house colors, system fonts, and cleaner title/layout treatment.
+
+### Work Done
+
+- Added `release/public-portfolio-summary-pdf-header.tex` with custom LaTeX styling.
+- Updated `release/build-public-portfolio-summary.sh` to strip the duplicated H1, apply the custom header, and use local cache isolation during the build.
+- Rebuilt `release/public-portfolio-summary.pdf` and visually checked the first page.
+
+### Evidence / Test
+
+- `./release/build-public-portfolio-summary.sh`: pass
+- Page render sanity check with `pdftoppm` and `view_image`: pass
+
+### Result
+
+The PDF release asset now presents as a more polished reviewer-facing document while keeping the Markdown source unchanged.
+
+### Next Action
+
+Upload the updated PDF to the GitHub Release and commit the styling changes.

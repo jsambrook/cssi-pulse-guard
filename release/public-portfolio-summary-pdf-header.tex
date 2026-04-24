@@ -1,0 +1,51 @@
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{titling}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{setspace}
+
+\definecolor{PulseNavy}{HTML}{16324F}
+\definecolor{PulseSlate}{HTML}{475569}
+\definecolor{PulseRule}{HTML}{CBD5E1}
+
+\setmainfont{Palatino}
+\setsansfont{Avenir Next}
+\setmonofont{Menlo}
+\setstretch{1.08}
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=1.5em,itemsep=0.25em,topsep=0.35em}
+
+\titleformat{\section}
+  {\sffamily\bfseries\Large\color{PulseNavy}}
+  {\thesection}
+  {0.75em}
+  {}
+
+\titleformat{\subsection}
+  {\sffamily\bfseries\large\color{PulseNavy}}
+  {\thesubsection}
+  {0.65em}
+  {}
+
+\titlespacing*{\section}{0pt}{1.2em}{0.5em}
+\titlespacing*{\subsection}{0pt}{1.0em}{0.35em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{PulseSlate}{CSSI Pulse Guard}}
+\fancyhead[R]{\small\textcolor{PulseSlate}{Public Portfolio Summary}}
+\fancyfoot[C]{\small\textcolor{PulseSlate}{\thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{PulseRule}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrulewidth}{0pt}
+
+\pretitle{\begin{center}\sffamily\bfseries\fontsize{22}{26}\selectfont\color{PulseNavy}}
+\posttitle{\par\end{center}\vspace{0.35em}}
+\preauthor{\begin{center}\sffamily\large\color{PulseSlate}}
+\postauthor{\par\end{center}}
+\predate{\begin{center}\sffamily\small\color{PulseSlate}}
+\postdate{\par\end{center}\vspace{0.9em}}
